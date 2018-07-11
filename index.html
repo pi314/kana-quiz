@@ -14,14 +14,14 @@
         <div id="prev" class="pane">
           <div class="text">{{ prev.q }}</div>
           <div class="footnote"
-              :class="{wrong: prev.input != prev.ans }">
-              {{ prev.ans }} <span class="fail-count">{{ tally[prev.fail] }}</span>
+              :class="{wrong: !prev.pass }">
+              {{ prev.ans ? prev.ans.join(', ') : '' }} <span class="fail-count">{{ tally[prev.fail] }}</span>
           </div>
         </div>
         <div id="curr" class="pane">
           <div class="text">{{ curr.q }}</div>
           <div class="footnote"
-              :class="{wrong: curr.input != curr.ans}">
+              :class="{wrong: !curr.pass }">
               {{ curr.input }} <span class="fail-count">{{ tally[curr.fail] }}</span>
           </div>
         </div>
