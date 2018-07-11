@@ -1,0 +1,68 @@
+#app {
+    margin: auto;
+    padding: 0;
+    border: 0;
+    width: 50%;
+    height: 100%;
+    font-size: 0;
+}
+
+#quiz {
+    text-align: center;
+}
+
+#quiz > .pane {
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.3);
+    vertical-align: bottom;
+}
+#quiz > .pane > .text {
+    font-size: 3rem;
+    min-height: 1em;
+    line-height: 1;
+}
+#quiz > .pane > .footnote {
+    font-size: 1.5rem;
+    min-height: 1em;
+    line-height: 1;
+}
+
+#quiz > #curr.pane {
+    width: 50%;
+    height: 100%;
+    color: black;
+}
+#quiz > #curr.pane > .text {
+    font-size: 5rem;
+}
+#quiz > #curr.pane > .footnote {
+    font-size: 2rem;
+}
+
+
+#input {
+    display: inline-block;
+    width: 50%;
+    min-height: 1em;
+    line-height: 1;
+    margin: 1em 25%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.wrong {
+    color: red;
+}
+
+.fail-count {
+    font-size: 0.9rem;
+}
+
+
+#score {
+    font-family: monospace;
+    font-size: 1rem;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kana Quiz</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="jquery-3.1.2-pre.min.js"></script>
+    <script src="vue-v2.0.5.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="quiz">
+        <div id="prev" class="pane">
+          <div class="text">{{ prev.q }}</div>
+          <div class="footnote"
+              :class="{wrong: prev.input != prev.ans }">
+              {{ prev.ans }} <span class="fail-count">{{ tally[prev.fail] }}</span>
+          </div>
+        </div>
+        <div id="curr" class="pane">
+          <div class="text">{{ curr.q }}</div>
+          <div class="footnote"
+              :class="{wrong: curr.input != curr.ans}">
+              {{ curr.input }} <span class="fail-count">{{ tally[curr.fail] }}</span>
+          </div>
+        </div>
+        <div id="next" class="pane">
+          <div class="text">{{ next.q }}</div>
+          <div class="footnote">{{ next.input }}</div>
+        </div>
+      </div>
+      <hr>
+      <div id="input" @keydown.native="keydown">{{ input }} |</div>
+      <hr>
+      <div>
+        <table id="score">
+          <tr><td>Pass (perfect)</td><td>{{ pass_perfect }}</td></tr>
+          <tr><td>Pass</td><td>{{ pass }}</td></tr>
+          <tr><td>Fail</td><td>{{ fail }}</td></tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
